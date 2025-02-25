@@ -1,5 +1,6 @@
 extends Node2D
 
+# Now with GubHub -- yay!
 
 # indexed by 0-based turn order. 
 # Player = {colornum, space, piece, dice, claimnum}
