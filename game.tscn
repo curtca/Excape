@@ -1,0 +1,300 @@
+[gd_scene load_steps=12 format=3 uid="uid://ccxd16miw2dk"]
+
+[ext_resource type="Texture2D" uid="uid://b0vjiw6p40ob0" path="res://Assets/board.png" id="1_grt7f"]
+[ext_resource type="Script" path="res://game.gd" id="1_v2byh"]
+[ext_resource type="PackedScene" uid="uid://btrhhkvuyqpq6" path="res://start_menu.tscn" id="2_usk4w"]
+[ext_resource type="Texture2D" uid="uid://3ca3te8o6vih" path="res://Assets/pieceBlue_border02.png" id="4_cd2ym"]
+[ext_resource type="PackedScene" uid="uid://dav2synmm8i31" path="res://debug_pane.tscn" id="4_ml3vs"]
+[ext_resource type="Texture2D" uid="uid://gbs6i3kpbjkv" path="res://Assets/pieceGreen_border01.png" id="5_ymfwi"]
+[ext_resource type="Texture2D" uid="uid://dgwhtelrf5dep" path="res://Assets/piecePurple_border01.png" id="6_88t2m"]
+[ext_resource type="Texture2D" uid="uid://7oturd2p1sf" path="res://Assets/pieceRed_border01.png" id="7_8wn1s"]
+[ext_resource type="Texture2D" uid="uid://dhp3mw3qrp1cg" path="res://Assets/pieceWhite_border01.png" id="8_4kukb"]
+[ext_resource type="Texture2D" uid="uid://d2ssen6ybhykm" path="res://Assets/pieceYellow_border00.png" id="9_8ingn"]
+[ext_resource type="PackedScene" uid="uid://4o3ivuv232wk" path="res://dice.tscn" id="11_koepw"]
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_v2byh")
+
+[node name="Board" type="Sprite2D" parent="."]
+position = Vector2(342, 324)
+scale = Vector2(1.15371, 1.15371)
+texture = ExtResource("1_grt7f")
+metadata/_edit_lock_ = true
+
+[node name="Locations" type="Node" parent="Board"]
+
+[node name="Spaces" type="Marker2D" parent="Board/Locations"]
+unique_name_in_owner = true
+
+[node name="Pos0" type="Marker2D" parent="Board/Locations/Spaces"]
+position = Vector2(225, 487)
+
+[node name="Pos1" type="Marker2D" parent="Board/Locations/Spaces"]
+position = Vector2(135, 565)
+
+[node name="Pos2" type="Marker2D" parent="Board/Locations/Spaces"]
+position = Vector2(58, 490)
+
+[node name="Pos3" type="Marker2D" parent="Board/Locations/Spaces"]
+position = Vector2(113, 436)
+
+[node name="Pos4" type="Marker2D" parent="Board/Locations/Spaces"]
+position = Vector2(172, 389)
+
+[node name="Pos5" type="Marker2D" parent="Board/Locations/Spaces"]
+position = Vector2(177, 250)
+
+[node name="Pos6" type="Marker2D" parent="Board/Locations/Spaces"]
+position = Vector2(128, 201)
+
+[node name="Pos7" type="Marker2D" parent="Board/Locations/Spaces"]
+position = Vector2(77, 154)
+
+[node name="Pos8" type="Marker2D" parent="Board/Locations/Spaces"]
+position = Vector2(161, 83)
+
+[node name="Pos9" type="Marker2D" parent="Board/Locations/Spaces"]
+position = Vector2(213, 133)
+
+[node name="Pos10" type="Marker2D" parent="Board/Locations/Spaces"]
+position = Vector2(266, 181)
+
+[node name="Pos11" type="Marker2D" parent="Board/Locations/Spaces"]
+position = Vector2(418, 182)
+
+[node name="Pos12" type="Marker2D" parent="Board/Locations/Spaces"]
+position = Vector2(472, 137)
+
+[node name="Pos13" type="Marker2D" parent="Board/Locations/Spaces"]
+position = Vector2(525, 90)
+
+[node name="Pos14" type="Marker2D" parent="Board/Locations/Spaces"]
+position = Vector2(601, 159)
+
+[node name="Pos15" type="Marker2D" parent="Board/Locations/Spaces"]
+position = Vector2(545, 203)
+
+[node name="Pos16" type="Marker2D" parent="Board/Locations/Spaces"]
+position = Vector2(491, 252)
+
+[node name="Pos17" type="Marker2D" parent="Board/Locations/Spaces"]
+position = Vector2(487, 389)
+
+[node name="Pos18" type="Marker2D" parent="Board/Locations/Spaces"]
+position = Vector2(539, 439)
+
+[node name="Pos19" type="Marker2D" parent="Board/Locations/Spaces"]
+position = Vector2(591, 490)
+
+[node name="Pos20" type="Marker2D" parent="Board/Locations/Spaces"]
+position = Vector2(509, 562)
+
+[node name="Pos21" type="Marker2D" parent="Board/Locations/Spaces"]
+position = Vector2(452, 491)
+
+[node name="ActivePlayers" type="Marker2D" parent="Board/Locations"]
+unique_name_in_owner = true
+position = Vector2(334, 600)
+
+[node name="ActiveDice" type="Marker2D" parent="Board/Locations"]
+unique_name_in_owner = true
+position = Vector2(338, 100)
+
+[node name="DeadDice" type="Marker2D" parent="Board/Locations"]
+unique_name_in_owner = true
+position = Vector2(897, 257)
+
+[node name="PlayerControls" type="Node2D" parent="."]
+z_index = 1
+position = Vector2(300, 24)
+scale = Vector2(1.5, 1.5)
+
+[node name="RerollButton" type="Button" parent="PlayerControls"]
+unique_name_in_owner = true
+visible = false
+offset_right = 54.0
+offset_bottom = 31.0
+text = "Reroll"
+
+[node name="SelectButtons" type="Node" parent="PlayerControls"]
+unique_name_in_owner = true
+
+[node name="Claim0" type="Button" parent="PlayerControls/SelectButtons"]
+visible = false
+offset_left = 315.0
+offset_top = 398.0
+offset_right = 369.0
+offset_bottom = 429.0
+text = "Select"
+
+[node name="Claim1" type="Button" parent="PlayerControls/SelectButtons"]
+visible = false
+offset_left = 315.0
+offset_top = 362.0
+offset_right = 369.0
+offset_bottom = 393.0
+text = "Select"
+
+[node name="Claim2" type="Button" parent="PlayerControls/SelectButtons"]
+visible = false
+offset_left = 315.0
+offset_top = 327.0
+offset_right = 369.0
+offset_bottom = 358.0
+text = "Select"
+
+[node name="Claim3" type="Button" parent="PlayerControls/SelectButtons"]
+visible = false
+offset_left = 315.0
+offset_top = 291.0
+offset_right = 369.0
+offset_bottom = 322.0
+text = "Select"
+
+[node name="Claim4" type="Button" parent="PlayerControls/SelectButtons"]
+visible = false
+offset_left = 315.0
+offset_top = 256.0
+offset_right = 369.0
+offset_bottom = 287.0
+text = "Select"
+
+[node name="Claim5" type="Button" parent="PlayerControls/SelectButtons"]
+visible = false
+offset_left = 315.0
+offset_top = 222.0
+offset_right = 369.0
+offset_bottom = 253.0
+text = "Select"
+
+[node name="PlayAgain" type="Button" parent="PlayerControls"]
+unique_name_in_owner = true
+visible = false
+modulate = Color(0.3681, 0.859104, 1.15514e-06, 1)
+top_level = true
+offset_left = 228.0
+offset_top = 8.0
+offset_right = 465.0
+offset_bottom = 80.0
+theme_override_font_sizes/font_size = 46
+text = "Play Again"
+
+[node name="DebugPane" parent="." instance=ExtResource("4_ml3vs")]
+visible = false
+anchors_preset = 6
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 553.0
+offset_top = 191.0
+offset_right = 707.0
+offset_bottom = 626.0
+grow_horizontal = 0
+rotation = 0.0
+scale = Vector2(0.6, 0.6)
+size_flags_horizontal = 4
+
+[node name="StartMenu" parent="." instance=ExtResource("2_usk4w")]
+visible = false
+offset_top = -249.5
+offset_bottom = 249.5
+
+[node name="PlayerPieces" type="Node2D" parent="."]
+unique_name_in_owner = true
+y_sort_enabled = true
+
+[node name="Blue" type="Sprite2D" parent="PlayerPieces"]
+y_sort_enabled = true
+position = Vector2(-211, 104)
+texture = ExtResource("4_cd2ym")
+
+[node name="Green" type="Sprite2D" parent="PlayerPieces"]
+y_sort_enabled = true
+position = Vector2(-298, 64)
+texture = ExtResource("5_ymfwi")
+
+[node name="Purple" type="Sprite2D" parent="PlayerPieces"]
+y_sort_enabled = true
+position = Vector2(-368, 99)
+texture = ExtResource("6_88t2m")
+
+[node name="Orange" type="Sprite2D" parent="PlayerPieces"]
+y_sort_enabled = true
+position = Vector2(-328, 225)
+texture = ExtResource("7_8wn1s")
+
+[node name="White" type="Sprite2D" parent="PlayerPieces"]
+y_sort_enabled = true
+position = Vector2(-389, 203)
+texture = ExtResource("8_4kukb")
+
+[node name="Yellow" type="Sprite2D" parent="PlayerPieces"]
+y_sort_enabled = true
+position = Vector2(-281, 148)
+texture = ExtResource("9_8ingn")
+
+[node name="Dice" type="Node" parent="."]
+unique_name_in_owner = true
+
+[node name="DiceBlue" parent="Dice" instance=ExtResource("11_koepw")]
+offset_left = -769.0
+offset_top = 24.0
+offset_right = -769.0
+offset_bottom = 24.0
+
+[node name="DiceGreen" parent="Dice" instance=ExtResource("11_koepw")]
+offset_left = -681.0
+offset_top = 149.0
+offset_right = -681.0
+offset_bottom = 149.0
+
+[node name="DicePurple" parent="Dice" instance=ExtResource("11_koepw")]
+offset_left = -767.0
+offset_top = 141.0
+offset_right = -767.0
+offset_bottom = 141.0
+
+[node name="DiceOrange" parent="Dice" instance=ExtResource("11_koepw")]
+offset_left = -770.0
+offset_top = 79.0
+offset_right = -770.0
+offset_bottom = 79.0
+
+[node name="DiceWhite" parent="Dice" instance=ExtResource("11_koepw")]
+offset_left = -690.0
+offset_top = 30.0
+offset_right = -690.0
+offset_bottom = 30.0
+
+[node name="DiceYellow" parent="Dice" instance=ExtResource("11_koepw")]
+offset_left = -680.0
+offset_top = 101.0
+offset_right = -680.0
+offset_bottom = 101.0
+
+[node name="WinnerContainer" type="Node2D" parent="."]
+unique_name_in_owner = true
+top_level = true
+z_index = 1
+position = Vector2(63, 182)
+
+[node name="Winner" type="Label" parent="WinnerContainer"]
+unique_name_in_owner = true
+visible = false
+offset_right = 567.0
+offset_bottom = 180.0
+theme_override_colors/font_color = Color(0.264444, 0.314958, 0.92176, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 50
+theme_override_font_sizes/font_size = 131
+text = "Winner!!!"
+
+[connection signal="pressed" from="PlayerControls/RerollButton" to="." method="_on_reroll_button_pressed"]
+[connection signal="pressed" from="PlayerControls/SelectButtons/Claim0" to="." method="_on_claim_pressed" binds= [0]]
+[connection signal="pressed" from="PlayerControls/SelectButtons/Claim1" to="." method="_on_claim_pressed" binds= [1]]
+[connection signal="pressed" from="PlayerControls/SelectButtons/Claim2" to="." method="_on_claim_pressed" binds= [2]]
+[connection signal="pressed" from="PlayerControls/SelectButtons/Claim3" to="." method="_on_claim_pressed" binds= [3]]
+[connection signal="pressed" from="PlayerControls/SelectButtons/Claim4" to="." method="_on_claim_pressed" binds= [4]]
+[connection signal="pressed" from="PlayerControls/SelectButtons/Claim5" to="." method="_on_claim_pressed" binds= [5]]
+[connection signal="pressed" from="PlayerControls/PlayAgain" to="." method="_on_play_again_pressed"]
+[connection signal="on_debug_player_move" from="DebugPane" to="." method="_on_debug_pane_player_move"]
+[connection signal="start_game" from="StartMenu" to="." method="_on_start_menu_start_game"]

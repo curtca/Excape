@@ -1,0 +1,134 @@
+[gd_scene load_steps=13 format=3 uid="uid://btrhhkvuyqpq6"]
+
+[ext_resource type="Script" path="res://start_menu.gd" id="1_drcks"]
+[ext_resource type="Texture2D" uid="uid://3ca3te8o6vih" path="res://Assets/pieceBlue_border02.png" id="1_i51qm"]
+[ext_resource type="Texture2D" uid="uid://dylqogo1lxhtk" path="res://Assets/Excape.png" id="1_xxcqi"]
+[ext_resource type="Texture2D" uid="uid://gbs6i3kpbjkv" path="res://Assets/pieceGreen_border01.png" id="2_a6gf3"]
+[ext_resource type="Texture2D" uid="uid://dgwhtelrf5dep" path="res://Assets/piecePurple_border01.png" id="3_rdrdh"]
+[ext_resource type="Texture2D" uid="uid://7oturd2p1sf" path="res://Assets/pieceRed_border01.png" id="4_3ckx4"]
+[ext_resource type="Texture2D" uid="uid://dhp3mw3qrp1cg" path="res://Assets/pieceWhite_border01.png" id="5_bjxyo"]
+[ext_resource type="Texture2D" uid="uid://d2ssen6ybhykm" path="res://Assets/pieceYellow_border00.png" id="6_1rp4g"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rbpte"]
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="Theme" id="Theme_d0l08"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wt614"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g22u2"]
+
+[node name="StartMenu" type="PanelContainer"]
+top_level = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -170.0
+offset_top = -246.0
+offset_right = 170.0
+offset_bottom = 246.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_rbpte")
+script = ExtResource("1_drcks")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="SomethingElse" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Title" type="TextureRect" parent="MarginContainer/SomethingElse"]
+layout_mode = 2
+texture = ExtResource("1_xxcqi")
+
+[node name="PlayerColors" type="GridContainer" parent="MarginContainer/SomethingElse"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+columns = 2
+
+[node name="CheckButtonBlue" type="CheckButton" parent="MarginContainer/SomethingElse/PlayerColors"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = SubResource("Theme_d0l08")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_wt614")
+action_mode = 0
+icon = ExtResource("1_i51qm")
+
+[node name="CheckButtonGreen" type="CheckButton" parent="MarginContainer/SomethingElse/PlayerColors"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = SubResource("Theme_d0l08")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_g22u2")
+action_mode = 0
+icon = ExtResource("2_a6gf3")
+
+[node name="CheckButtonPurple" type="CheckButton" parent="MarginContainer/SomethingElse/PlayerColors"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = SubResource("Theme_d0l08")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_g22u2")
+action_mode = 0
+icon = ExtResource("3_rdrdh")
+
+[node name="CheckButtonOrange" type="CheckButton" parent="MarginContainer/SomethingElse/PlayerColors"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = SubResource("Theme_d0l08")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_g22u2")
+action_mode = 0
+icon = ExtResource("4_3ckx4")
+
+[node name="CheckButtonWhite" type="CheckButton" parent="MarginContainer/SomethingElse/PlayerColors"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = SubResource("Theme_d0l08")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_g22u2")
+action_mode = 0
+icon = ExtResource("5_bjxyo")
+
+[node name="CheckButtonYellow" type="CheckButton" parent="MarginContainer/SomethingElse/PlayerColors"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = SubResource("Theme_d0l08")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_g22u2")
+action_mode = 0
+icon = ExtResource("6_1rp4g")
+
+[node name="Spacer" type="Control" parent="MarginContainer/SomethingElse"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/SomethingElse"]
+layout_mode = 2
+alignment = 1
+
+[node name="StartButton" type="Button" parent="MarginContainer/SomethingElse/HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 46
+text = "Start"
+
+[connection signal="pressed" from="MarginContainer/SomethingElse/HBoxContainer/StartButton" to="." method="_on_button_pressed"]

@@ -1,0 +1,180 @@
+[gd_scene load_steps=10 format=3 uid="uid://dav2synmm8i31"]
+
+[ext_resource type="Script" path="res://debug_pane.gd" id="1_1kjy5"]
+[ext_resource type="Texture2D" uid="uid://3ca3te8o6vih" path="res://Assets/pieceBlue_border02.png" id="1_v0uu7"]
+[ext_resource type="Texture2D" uid="uid://gbs6i3kpbjkv" path="res://Assets/pieceGreen_border01.png" id="2_sswoi"]
+[ext_resource type="Texture2D" uid="uid://dgwhtelrf5dep" path="res://Assets/piecePurple_border01.png" id="3_be3rd"]
+[ext_resource type="Texture2D" uid="uid://7oturd2p1sf" path="res://Assets/pieceRed_border01.png" id="4_d40ib"]
+[ext_resource type="Texture2D" uid="uid://dhp3mw3qrp1cg" path="res://Assets/pieceWhite_border01.png" id="5_2i60p"]
+[ext_resource type="Texture2D" uid="uid://d2ssen6ybhykm" path="res://Assets/pieceYellow_border00.png" id="6_se31y"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yt3bm"]
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.0652664, 0.19871, 0.317735, 1)
+
+[sub_resource type="Theme" id="Theme_t20y0"]
+HBoxContainer/constants/separation = 4
+
+[node name="PanelContainer" type="PanelContainer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -325.0
+offset_top = -325.0
+offset_right = -171.0
+offset_bottom = -294.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -6.28319
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_yt3bm")
+script = ExtResource("1_1kjy5")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+text = "Debug"
+horizontal_alignment = 1
+
+[node name="Players" type="VBoxContainer" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="Blue" type="HBoxContainer" parent="VBoxContainer/Players"]
+layout_mode = 2
+theme = SubResource("Theme_t20y0")
+
+[node name="ButtonLeft" type="Button" parent="VBoxContainer/Players/Blue"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "←"
+
+[node name="Pawn" type="TextureRect" parent="VBoxContainer/Players/Blue"]
+layout_mode = 2
+texture = ExtResource("1_v0uu7")
+stretch_mode = 3
+
+[node name="ButtonRight" type="Button" parent="VBoxContainer/Players/Blue"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "→"
+
+[node name="Green" type="HBoxContainer" parent="VBoxContainer/Players"]
+layout_mode = 2
+theme = SubResource("Theme_t20y0")
+
+[node name="ButtonLeft" type="Button" parent="VBoxContainer/Players/Green"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "←"
+
+[node name="Pawn" type="TextureRect" parent="VBoxContainer/Players/Green"]
+layout_mode = 2
+texture = ExtResource("2_sswoi")
+stretch_mode = 3
+
+[node name="ButtonRight" type="Button" parent="VBoxContainer/Players/Green"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "→"
+
+[node name="Purple" type="HBoxContainer" parent="VBoxContainer/Players"]
+layout_mode = 2
+theme = SubResource("Theme_t20y0")
+
+[node name="ButtonLeft" type="Button" parent="VBoxContainer/Players/Purple"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "←"
+
+[node name="Pawn" type="TextureRect" parent="VBoxContainer/Players/Purple"]
+layout_mode = 2
+texture = ExtResource("3_be3rd")
+stretch_mode = 3
+
+[node name="ButtonRight" type="Button" parent="VBoxContainer/Players/Purple"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "→"
+
+[node name="Orange" type="HBoxContainer" parent="VBoxContainer/Players"]
+layout_mode = 2
+theme = SubResource("Theme_t20y0")
+
+[node name="ButtonLeft" type="Button" parent="VBoxContainer/Players/Orange"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "←"
+
+[node name="Pawn" type="TextureRect" parent="VBoxContainer/Players/Orange"]
+layout_mode = 2
+texture = ExtResource("4_d40ib")
+stretch_mode = 3
+
+[node name="ButtonRight" type="Button" parent="VBoxContainer/Players/Orange"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "→"
+
+[node name="White" type="HBoxContainer" parent="VBoxContainer/Players"]
+layout_mode = 2
+theme = SubResource("Theme_t20y0")
+
+[node name="ButtonLeft" type="Button" parent="VBoxContainer/Players/White"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "←"
+
+[node name="Pawn" type="TextureRect" parent="VBoxContainer/Players/White"]
+layout_mode = 2
+texture = ExtResource("5_2i60p")
+stretch_mode = 3
+
+[node name="ButtonRight" type="Button" parent="VBoxContainer/Players/White"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "→"
+
+[node name="Yellow" type="HBoxContainer" parent="VBoxContainer/Players"]
+layout_mode = 2
+theme = SubResource("Theme_t20y0")
+
+[node name="ButtonLeft" type="Button" parent="VBoxContainer/Players/Yellow"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "←"
+
+[node name="Pawn" type="TextureRect" parent="VBoxContainer/Players/Yellow"]
+layout_mode = 2
+texture = ExtResource("6_se31y")
+stretch_mode = 3
+
+[node name="ButtonRight" type="Button" parent="VBoxContainer/Players/Yellow"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "→"
+
+[connection signal="pressed" from="VBoxContainer/Players/Blue/ButtonLeft" to="." method="_on_player_dir_pressed" binds= [0, false]]
+[connection signal="pressed" from="VBoxContainer/Players/Blue/ButtonRight" to="." method="_on_player_dir_pressed" binds= [0, true]]
+[connection signal="pressed" from="VBoxContainer/Players/Green/ButtonLeft" to="." method="_on_player_dir_pressed" binds= [1, false]]
+[connection signal="pressed" from="VBoxContainer/Players/Green/ButtonRight" to="." method="_on_player_dir_pressed" binds= [1, true]]
+[connection signal="pressed" from="VBoxContainer/Players/Purple/ButtonLeft" to="." method="_on_player_dir_pressed" binds= [2, false]]
+[connection signal="pressed" from="VBoxContainer/Players/Purple/ButtonRight" to="." method="_on_player_dir_pressed" binds= [2, true]]
+[connection signal="pressed" from="VBoxContainer/Players/Orange/ButtonLeft" to="." method="_on_player_dir_pressed" binds= [3, false]]
+[connection signal="pressed" from="VBoxContainer/Players/Orange/ButtonRight" to="." method="_on_player_dir_pressed" binds= [3, true]]
+[connection signal="pressed" from="VBoxContainer/Players/White/ButtonLeft" to="." method="_on_player_dir_pressed" binds= [4, false]]
+[connection signal="pressed" from="VBoxContainer/Players/White/ButtonRight" to="." method="_on_player_dir_pressed" binds= [4, true]]
+[connection signal="pressed" from="VBoxContainer/Players/Yellow/ButtonLeft" to="." method="_on_player_dir_pressed" binds= [5, false]]
+[connection signal="pressed" from="VBoxContainer/Players/Yellow/ButtonRight" to="." method="_on_player_dir_pressed" binds= [5, true]]

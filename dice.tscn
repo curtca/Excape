@@ -1,0 +1,62 @@
+[gd_scene load_steps=4 format=3 uid="uid://4o3ivuv232wk"]
+
+[ext_resource type="Script" path="res://dice.gd" id="1_mcxtj"]
+[ext_resource type="Texture2D" uid="uid://byocavekmwib1" path="res://Assets/die6.png" id="2_fvku6"]
+[ext_resource type="Texture2D" uid="uid://cdhc2bn1v1o8p" path="res://Assets/die7.png" id="3_tjek7"]
+
+[node name="Dice" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.4, 0.4)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_mcxtj")
+dice_value = 100
+
+[node name="DiceContainer" type="HBoxContainer" parent="."]
+unique_name_in_owner = true
+layout_direction = 3
+layout_mode = 2
+offset_left = -72.5
+offset_top = -35.0
+offset_right = 72.5
+offset_bottom = 35.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 5
+alignment = 1
+
+[node name="d0" type="CenterContainer" parent="DiceContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(65, 60)
+layout_mode = 2
+
+[node name="die 12356x" type="Sprite2D" parent="DiceContainer/d0"]
+texture = ExtResource("2_fvku6")
+centered = false
+hframes = 4
+vframes = 2
+
+[node name="d1" type="CenterContainer" parent="DiceContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(65, 60)
+layout_mode = 2
+
+[node name="die 12347x" type="Sprite2D" parent="DiceContainer/d1"]
+texture = ExtResource("3_tjek7")
+centered = false
+hframes = 4
+vframes = 2
+frame = 4
+
+[node name="Shaking" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 0.1
+
+[connection signal="timeout" from="Shaking" to="." method="_on_shaking_timeout"]
