@@ -1,0 +1,35 @@
+---
+description: 
+globs: *.gd, *.tscn
+---
+# .cursorrules for Godot Engine Game Development with GDScript
+
+# General Guidelines
+- Write clear, maintainable GDScript code with comments for complex logic.
+- Organize scripts by scene or feature to maintain a clean project structure.
+- Follow Godot's naming conventions: lowercase with underscores for scripts and variables.
+
+# Functions and Methods
+- Keep functions concise and focused on a single task.
+- Use descriptive names for functions that reflect their purpose.
+- Utilize signals for decoupled event handling and avoid tightly coupled logic.
+
+# Data and State Management
+- Favor Instanced Scenes for reusable game elements.
+- Manage global state using Autoload scripts when needed.
+
+# Performance Optimization
+- Use built-in physics and navigation systems.
+- Use Static Batching for static objects to improve rendering performance.
+
+# Version Specific (Godot 4.3)
+- Use Godot version 4.3
+- Leverage new renderer features for improved visual quality.
+- Take advantage of the latest GDScript improvements for better performance.
+
+# Error Handling and Debugging
+- Use print_debug() for verbose output during debugging.
+- Implement error logging to capture unexpected behavior.
+
+# Misc
+- Don't warn about integer division

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://ccxd16miw2dk"]
+[gd_scene load_steps=13 format=3 uid="uid://ccxd16miw2dk"]
 
 [ext_resource type="Texture2D" uid="uid://b0vjiw6p40ob0" path="res://Assets/board.png" id="1_grt7f"]
 [ext_resource type="Script" path="res://game.gd" id="1_v2byh"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://dhp3mw3qrp1cg" path="res://Assets/pieceWhite_border01.png" id="8_4kukb"]
 [ext_resource type="Texture2D" uid="uid://d2ssen6ybhykm" path="res://Assets/pieceYellow_border00.png" id="9_8ingn"]
 [ext_resource type="PackedScene" uid="uid://4o3ivuv232wk" path="res://dice.tscn" id="11_koepw"]
+[ext_resource type="PackedScene" uid="uid://c4yuvic1q5mdw" path="res://main_menu.tscn" id="12_s4ho3"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_v2byh")
@@ -172,12 +173,24 @@ unique_name_in_owner = true
 visible = false
 modulate = Color(0.3681, 0.859104, 1.15514e-06, 1)
 top_level = true
-offset_left = 228.0
-offset_top = 8.0
-offset_right = 465.0
-offset_bottom = 80.0
+offset_left = 85.0
+offset_top = 14.0
+offset_right = 322.0
+offset_bottom = 86.0
 theme_override_font_sizes/font_size = 46
 text = "Play Again"
+
+[node name="KeepPlaying" type="Button" parent="PlayerControls"]
+unique_name_in_owner = true
+visible = false
+modulate = Color(0.3681, 0.859104, 1.15514e-06, 1)
+top_level = true
+offset_left = 342.0
+offset_top = 14.0
+offset_right = 633.0
+offset_bottom = 86.0
+theme_override_font_sizes/font_size = 46
+text = "Keep Playing"
 
 [node name="DebugPane" parent="." instance=ExtResource("4_ml3vs")]
 visible = false
@@ -288,6 +301,15 @@ theme_override_constants/outline_size = 50
 theme_override_font_sizes/font_size = 131
 text = "Winner!!!"
 
+[node name="MainMenu" parent="." instance=ExtResource("12_s4ho3")]
+visible = false
+offset_left = 142.0
+offset_top = 104.0
+offset_right = 526.0
+offset_bottom = 544.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
 [connection signal="pressed" from="PlayerControls/RerollButton" to="." method="_on_reroll_button_pressed"]
 [connection signal="pressed" from="PlayerControls/SelectButtons/Claim0" to="." method="_on_claim_pressed" binds= [0]]
 [connection signal="pressed" from="PlayerControls/SelectButtons/Claim1" to="." method="_on_claim_pressed" binds= [1]]
@@ -296,5 +318,6 @@ text = "Winner!!!"
 [connection signal="pressed" from="PlayerControls/SelectButtons/Claim4" to="." method="_on_claim_pressed" binds= [4]]
 [connection signal="pressed" from="PlayerControls/SelectButtons/Claim5" to="." method="_on_claim_pressed" binds= [5]]
 [connection signal="pressed" from="PlayerControls/PlayAgain" to="." method="_on_play_again_pressed"]
+[connection signal="pressed" from="PlayerControls/KeepPlaying" to="." method="_on_keep_playing_pressed"]
 [connection signal="on_debug_player_move" from="DebugPane" to="." method="_on_debug_pane_player_move"]
 [connection signal="start_game" from="StartMenu" to="." method="_on_start_menu_start_game"]

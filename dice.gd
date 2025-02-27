@@ -1,5 +1,6 @@
 @tool
 extends Control
+class_name Dice
 
 signal dice_roll_complete(value)
 
